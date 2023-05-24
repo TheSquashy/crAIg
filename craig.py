@@ -11,4 +11,9 @@ page = driver.page_source
 
 soup = bs4.BeautifulSoup(page, 'html5lib')
 
-print(soup.prettify())
+entries = soup.findAll('div', attrs = {'class':'gallery-card'})
+
+for entry in entries:
+    print(entry)
+
+#print(soup.prettify())
